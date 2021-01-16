@@ -10,6 +10,13 @@
 		3356ABB425B35B52006F32FF /* PSAWeatherSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3356ABAA25B35B52006F32FF /* PSAWeatherSDK.framework */; };
 		3356ABB925B35B52006F32FF /* PSAWeatherSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3356ABB825B35B52006F32FF /* PSAWeatherSDKTests.swift */; };
 		3356ABBB25B35B52006F32FF /* PSAWeatherSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 3356ABAD25B35B52006F32FF /* PSAWeatherSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3356ABCD25B35BEC006F32FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3356ABCC25B35BEC006F32FF /* AppDelegate.swift */; };
+		3356ABCF25B35BEC006F32FF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3356ABCE25B35BEC006F32FF /* SceneDelegate.swift */; };
+		3356ABD125B35BEC006F32FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3356ABD025B35BEC006F32FF /* ViewController.swift */; };
+		3356ABD425B35BED006F32FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3356ABD225B35BED006F32FF /* Main.storyboard */; };
+		3356ABD625B35BEF006F32FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3356ABD525B35BEF006F32FF /* Assets.xcassets */; };
+		3356ABD925B35BEF006F32FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3356ABD725B35BEF006F32FF /* LaunchScreen.storyboard */; };
+		3356ABE325B35C69006F32FF /* PSAWeatherSDK.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3356ABE125B35C69006F32FF /* PSAWeatherSDK.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +36,15 @@
 		3356ABB325B35B52006F32FF /* PSAWeatherSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PSAWeatherSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3356ABB825B35B52006F32FF /* PSAWeatherSDKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSAWeatherSDKTests.swift; sourceTree = "<group>"; };
 		3356ABBA25B35B52006F32FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3356ABCA25B35BEC006F32FF /* PSAWeatherSDKExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PSAWeatherSDKExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3356ABCC25B35BEC006F32FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3356ABCE25B35BEC006F32FF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		3356ABD025B35BEC006F32FF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3356ABD325B35BED006F32FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3356ABD525B35BEF006F32FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3356ABD825B35BEF006F32FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3356ABDA25B35BEF006F32FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3356ABE225B35C69006F32FF /* PSAWeatherSDK.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PSAWeatherSDK.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,14 +63,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3356ABC725B35BEC006F32FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		3356ABA025B35B52006F32FF = {
 			isa = PBXGroup;
 			children = (
+				3356ABE125B35C69006F32FF /* PSAWeatherSDK.xcdatamodeld */,
 				3356ABAC25B35B52006F32FF /* PSAWeatherSDK */,
 				3356ABB725B35B52006F32FF /* PSAWeatherSDKTests */,
+				3356ABCB25B35BEC006F32FF /* PSAWeatherSDKExamples */,
 				3356ABAB25B35B52006F32FF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -64,6 +89,7 @@
 			children = (
 				3356ABAA25B35B52006F32FF /* PSAWeatherSDK.framework */,
 				3356ABB325B35B52006F32FF /* PSAWeatherSDKTests.xctest */,
+				3356ABCA25B35BEC006F32FF /* PSAWeatherSDKExamples.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -84,6 +110,20 @@
 				3356ABBA25B35B52006F32FF /* Info.plist */,
 			);
 			path = PSAWeatherSDKTests;
+			sourceTree = "<group>";
+		};
+		3356ABCB25B35BEC006F32FF /* PSAWeatherSDKExamples */ = {
+			isa = PBXGroup;
+			children = (
+				3356ABCC25B35BEC006F32FF /* AppDelegate.swift */,
+				3356ABCE25B35BEC006F32FF /* SceneDelegate.swift */,
+				3356ABD025B35BEC006F32FF /* ViewController.swift */,
+				3356ABD225B35BED006F32FF /* Main.storyboard */,
+				3356ABD525B35BEF006F32FF /* Assets.xcassets */,
+				3356ABD725B35BEF006F32FF /* LaunchScreen.storyboard */,
+				3356ABDA25B35BEF006F32FF /* Info.plist */,
+			);
+			path = PSAWeatherSDKExamples;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +176,23 @@
 			productReference = 3356ABB325B35B52006F32FF /* PSAWeatherSDKTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		3356ABC925B35BEC006F32FF /* PSAWeatherSDKExamples */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3356ABDB25B35BEF006F32FF /* Build configuration list for PBXNativeTarget "PSAWeatherSDKExamples" */;
+			buildPhases = (
+				3356ABC625B35BEC006F32FF /* Sources */,
+				3356ABC725B35BEC006F32FF /* Frameworks */,
+				3356ABC825B35BEC006F32FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PSAWeatherSDKExamples;
+			productName = PSAWeatherSDKExamples;
+			productReference = 3356ABCA25B35BEC006F32FF /* PSAWeatherSDKExamples.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -149,6 +206,9 @@
 						CreatedOnToolsVersion = 12.3;
 					};
 					3356ABB225B35B52006F32FF = {
+						CreatedOnToolsVersion = 12.3;
+					};
+					3356ABC925B35BEC006F32FF = {
 						CreatedOnToolsVersion = 12.3;
 					};
 				};
@@ -168,6 +228,7 @@
 			targets = (
 				3356ABA925B35B52006F32FF /* PSAWeatherSDK */,
 				3356ABB225B35B52006F32FF /* PSAWeatherSDKTests */,
+				3356ABC925B35BEC006F32FF /* PSAWeatherSDKExamples */,
 			);
 		};
 /* End PBXProject section */
@@ -187,6 +248,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3356ABC825B35BEC006F32FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3356ABD925B35BEF006F32FF /* LaunchScreen.storyboard in Resources */,
+				3356ABD625B35BEF006F32FF /* Assets.xcassets in Resources */,
+				3356ABD425B35BED006F32FF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -194,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3356ABE325B35C69006F32FF /* PSAWeatherSDK.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +274,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				3356ABB925B35B52006F32FF /* PSAWeatherSDKTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3356ABC625B35BEC006F32FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3356ABD125B35BEC006F32FF /* ViewController.swift in Sources */,
+				3356ABCD25B35BEC006F32FF /* AppDelegate.swift in Sources */,
+				3356ABCF25B35BEC006F32FF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +296,25 @@
 			targetProxy = 3356ABB525B35B52006F32FF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3356ABD225B35BED006F32FF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3356ABD325B35BED006F32FF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3356ABD725B35BEF006F32FF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3356ABD825B35BEF006F32FF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		3356ABBC25B35B52006F32FF /* Debug */ = {
@@ -418,6 +519,42 @@
 			};
 			name = Release;
 		};
+		3356ABDC25B35BEF006F32FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PSAWeatherSDKExamples/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.amine.PSAWeatherSDKExamples;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3356ABDD25B35BEF006F32FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PSAWeatherSDKExamples/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.amine.PSAWeatherSDKExamples;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -448,7 +585,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		3356ABDB25B35BEF006F32FF /* Build configuration list for PBXNativeTarget "PSAWeatherSDKExamples" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3356ABDC25B35BEF006F32FF /* Debug */,
+				3356ABDD25B35BEF006F32FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3356ABE125B35C69006F32FF /* PSAWeatherSDK.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3356ABE225B35C69006F32FF /* PSAWeatherSDK.xcdatamodel */,
+			);
+			currentVersion = 3356ABE225B35C69006F32FF /* PSAWeatherSDK.xcdatamodel */;
+			path = PSAWeatherSDK.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3356ABA125B35B52006F32FF /* Project object */;
 }
