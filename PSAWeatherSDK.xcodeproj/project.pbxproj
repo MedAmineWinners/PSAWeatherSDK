@@ -97,6 +97,8 @@
 		3356ABAC25B35B52006F32FF /* PSAWeatherSDK */ = {
 			isa = PBXGroup;
 			children = (
+				3356ABE725B3646D006F32FF /* Domain */,
+				3356ABE825B36474006F32FF /* Data */,
 				3356ABAD25B35B52006F32FF /* PSAWeatherSDK.h */,
 				3356ABAE25B35B52006F32FF /* Info.plist */,
 			);
@@ -124,6 +126,60 @@
 				3356ABDA25B35BEF006F32FF /* Info.plist */,
 			);
 			path = PSAWeatherSDKExamples;
+			sourceTree = "<group>";
+		};
+		3356ABE725B3646D006F32FF /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				3356ABED25B365E9006F32FF /* Protocols */,
+				3356ABEC25B3659A006F32FF /* Entry */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		3356ABE825B36474006F32FF /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				3356ABEB25B364EF006F32FF /* DataBase */,
+				3356ABEA25B364E7006F32FF /* Source */,
+				3356ABE925B364E0006F32FF /* Modules */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		3356ABE925B364E0006F32FF /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		3356ABEA25B364E7006F32FF /* Source */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		3356ABEB25B364EF006F32FF /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataBase;
+			sourceTree = "<group>";
+		};
+		3356ABEC25B3659A006F32FF /* Entry */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entry;
+			sourceTree = "<group>";
+		};
+		3356ABED25B365E9006F32FF /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
