@@ -17,6 +17,11 @@
 		3356ABD625B35BEF006F32FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3356ABD525B35BEF006F32FF /* Assets.xcassets */; };
 		3356ABD925B35BEF006F32FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3356ABD725B35BEF006F32FF /* LaunchScreen.storyboard */; };
 		3356ABE325B35C69006F32FF /* PSAWeatherSDK.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3356ABE125B35C69006F32FF /* PSAWeatherSDK.xcdatamodeld */; };
+		3356ABEF25B367DE006F32FF /* PSAWeatherSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3356ABEE25B367DE006F32FF /* PSAWeatherSDK.swift */; };
+		3356ABF425B36C49006F32FF /* PSAWeatherSDKProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3356ABF325B36C49006F32FF /* PSAWeatherSDKProtocol.swift */; };
+		3356ABFE25B37284006F32FF /* PSAWeatherSDKExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3356ABFD25B37284006F32FF /* PSAWeatherSDKExtension.swift */; };
+		3356AC0325B372A9006F32FF /* AddCityProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3356AC0225B372A9006F32FF /* AddCityProtocols.swift */; };
+		3356AC0B25B372D8006F32FF /* AddCityInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3356AC0A25B372D8006F32FF /* AddCityInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +50,11 @@
 		3356ABD825B35BEF006F32FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3356ABDA25B35BEF006F32FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3356ABE225B35C69006F32FF /* PSAWeatherSDK.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PSAWeatherSDK.xcdatamodel; sourceTree = "<group>"; };
+		3356ABEE25B367DE006F32FF /* PSAWeatherSDK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSAWeatherSDK.swift; sourceTree = "<group>"; };
+		3356ABF325B36C49006F32FF /* PSAWeatherSDKProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSAWeatherSDKProtocol.swift; sourceTree = "<group>"; };
+		3356ABFD25B37284006F32FF /* PSAWeatherSDKExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSAWeatherSDKExtension.swift; sourceTree = "<group>"; };
+		3356AC0225B372A9006F32FF /* AddCityProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityProtocols.swift; sourceTree = "<group>"; };
+		3356AC0A25B372D8006F32FF /* AddCityInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +160,7 @@
 		3356ABE925B364E0006F32FF /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				3356ABF825B36D80006F32FF /* CityModule */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -171,6 +182,7 @@
 		3356ABEC25B3659A006F32FF /* Entry */ = {
 			isa = PBXGroup;
 			children = (
+				3356ABEE25B367DE006F32FF /* PSAWeatherSDK.swift */,
 			);
 			path = Entry;
 			sourceTree = "<group>";
@@ -178,8 +190,51 @@
 		3356ABED25B365E9006F32FF /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				3356ABF325B36C49006F32FF /* PSAWeatherSDKProtocol.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		3356ABF825B36D80006F32FF /* CityModule */ = {
+			isa = PBXGroup;
+			children = (
+				3356ABF925B371F7006F32FF /* EntryExtension */,
+				3356ABFB25B3722D006F32FF /* Protocols */,
+				3356ABFC25B3724F006F32FF /* Interactor */,
+				3356ABFA25B37217006F32FF /* Entity */,
+			);
+			path = CityModule;
+			sourceTree = "<group>";
+		};
+		3356ABF925B371F7006F32FF /* EntryExtension */ = {
+			isa = PBXGroup;
+			children = (
+				3356ABFD25B37284006F32FF /* PSAWeatherSDKExtension.swift */,
+			);
+			path = EntryExtension;
+			sourceTree = "<group>";
+		};
+		3356ABFA25B37217006F32FF /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		3356ABFB25B3722D006F32FF /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				3356AC0225B372A9006F32FF /* AddCityProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		3356ABFC25B3724F006F32FF /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				3356AC0A25B372D8006F32FF /* AddCityInteractor.swift */,
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +315,7 @@
 				TargetAttributes = {
 					3356ABA925B35B52006F32FF = {
 						CreatedOnToolsVersion = 12.3;
+						LastSwiftMigration = 1230;
 					};
 					3356ABB225B35B52006F32FF = {
 						CreatedOnToolsVersion = 12.3;
@@ -321,6 +377,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3356AC0325B372A9006F32FF /* AddCityProtocols.swift in Sources */,
+				3356AC0B25B372D8006F32FF /* AddCityInteractor.swift in Sources */,
+				3356ABF425B36C49006F32FF /* PSAWeatherSDKProtocol.swift in Sources */,
+				3356ABEF25B367DE006F32FF /* PSAWeatherSDK.swift in Sources */,
+				3356ABFE25B37284006F32FF /* PSAWeatherSDKExtension.swift in Sources */,
 				3356ABE325B35C69006F32FF /* PSAWeatherSDK.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -498,6 +559,7 @@
 		3356ABBF25B35B52006F32FF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -513,6 +575,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.amine.PSAWeatherSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -521,6 +584,7 @@
 		3356ABC025B35B52006F32FF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -544,6 +608,7 @@
 		3356ABC225B35B52006F32FF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = PSAWeatherSDKTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -561,6 +626,7 @@
 		3356ABC325B35B52006F32FF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = PSAWeatherSDKTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
