@@ -42,12 +42,12 @@
 		3356ACBB25B3BBFB006F32FF /* CurrentCityWeather+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3356ACAF25B3BBFB006F32FF /* CurrentCityWeather+CoreDataClass.swift */; };
 		3356ACBC25B3BBFB006F32FF /* CurrentCityWeather+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3356ACB025B3BBFB006F32FF /* CurrentCityWeather+CoreDataProperties.swift */; };
 		3356ACCC25B3BC7E006F32FF /* PSAWeatherSDK.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3356ABE125B35C69006F32FF /* PSAWeatherSDK.xcdatamodeld */; };
-		33B0EBE025B45AAE009F4E51 /* NetworkSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B0EBDF25B45AAE009F4E51 /* NetworkSessionMock.swift */; };
 		33B0EBE825B45AD9009F4E51 /* WebServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B0EBE725B45AD9009F4E51 /* WebServiceTest.swift */; };
 		33B0EBED25B45C00009F4E51 /* CurrentWeather.json in Resources */ = {isa = PBXBuildFile; fileRef = 33B0EBEC25B45C00009F4E51 /* CurrentWeather.json */; };
 		33B0EBF625B46174009F4E51 /* CoreDataInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B0EBF525B46174009F4E51 /* CoreDataInteractorTest.swift */; };
 		33B0EBFD25B468D1009F4E51 /* PSAWeatherSDK.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3356ABE125B35C69006F32FF /* PSAWeatherSDK.xcdatamodeld */; };
 		33B0EC1725B46CAB009F4E51 /* CityInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B0EC1625B46CAB009F4E51 /* CityInteractorTest.swift */; };
+		33B0EC4025B47E59009F4E51 /* NetworkSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B0EC3F25B47E59009F4E51 /* NetworkSessionMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,11 +107,11 @@
 		3356ACAE25B3BBFB006F32FF /* Coord+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Coord+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3356ACAF25B3BBFB006F32FF /* CurrentCityWeather+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurrentCityWeather+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3356ACB025B3BBFB006F32FF /* CurrentCityWeather+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurrentCityWeather+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		33B0EBDF25B45AAE009F4E51 /* NetworkSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSessionMock.swift; sourceTree = "<group>"; };
 		33B0EBE725B45AD9009F4E51 /* WebServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceTest.swift; sourceTree = "<group>"; };
 		33B0EBEC25B45C00009F4E51 /* CurrentWeather.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CurrentWeather.json; sourceTree = "<group>"; };
 		33B0EBF525B46174009F4E51 /* CoreDataInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataInteractorTest.swift; sourceTree = "<group>"; };
 		33B0EC1625B46CAB009F4E51 /* CityInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityInteractorTest.swift; sourceTree = "<group>"; };
+		33B0EC3F25B47E59009F4E51 /* NetworkSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSessionMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -343,9 +343,9 @@
 		33B0EBDB25B45A68009F4E51 /* RemoteServiceTests */ = {
 			isa = PBXGroup;
 			children = (
-				33B0EBDF25B45AAE009F4E51 /* NetworkSessionMock.swift */,
 				33B0EBE725B45AD9009F4E51 /* WebServiceTest.swift */,
 				33B0EBEC25B45C00009F4E51 /* CurrentWeather.json */,
+				33B0EC3F25B47E59009F4E51 /* NetworkSessionMock.swift */,
 			);
 			path = RemoteServiceTests;
 			sourceTree = "<group>";
@@ -542,8 +542,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3356ABB925B35B52006F32FF /* PSAWeatherSDKTests.swift in Sources */,
+				33B0EC4025B47E59009F4E51 /* NetworkSessionMock.swift in Sources */,
 				33B0EBF625B46174009F4E51 /* CoreDataInteractorTest.swift in Sources */,
-				33B0EBE025B45AAE009F4E51 /* NetworkSessionMock.swift in Sources */,
 				33B0EBFD25B468D1009F4E51 /* PSAWeatherSDK.xcdatamodeld in Sources */,
 				33B0EBE825B45AD9009F4E51 /* WebServiceTest.swift in Sources */,
 				33B0EC1725B46CAB009F4E51 /* CityInteractorTest.swift in Sources */,
