@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-class CoreDataInteractor {
+class CurrentCityWeatherCoreDataInteractor {
     
     /// saveCurrentCityWeather method allow us to save the current weather of a city in coredata
     /// - Parameter currentCityWeather:  the fetch currentCityWeather Model

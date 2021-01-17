@@ -13,7 +13,7 @@ class LocalServiceTest: XCTestCase {
     var data: Data?
     var currentWeather: CurrentCityWeatherModel?
     var savedWeather = CurrentCityWeather()
-   let coreDataInteractor = CoreDataInteractor()
+   let coreDataInteractor = CurrentCityWeatherCoreDataInteractor()
     override func setUp() {
         super.setUp()
         guard let bundle = Bundle(for: type(of: self)).path(forResource: "CurrentWeather", ofType: "json") else {
@@ -40,7 +40,7 @@ class LocalServiceTest: XCTestCase {
     
     func test_SavedWeathers_removed_from_coreData() {
         coreDataInteractor.removeSavedWeathersFromCoreData()
-        let testStillSaved = CoreDataInteractor().getSavedWeathersFromCoreData()
+        let testStillSaved = CurrentCityWeatherCoreDataInteractor().getSavedWeathersFromCoreData()
         XCTAssertEqual(testStillSaved?.count, 0)
     }
     
@@ -56,7 +56,7 @@ class LocalServiceTest: XCTestCase {
     
     override func tearDown() {
         super.tearDown()
-        CoreDataInteractor().removeSavedWeathersFromCoreData()
+        CurrentCityWeatherCoreDataInteractor().removeSavedWeathersFromCoreData()
     }
 
     func testExample() throws {

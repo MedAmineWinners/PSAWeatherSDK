@@ -37,7 +37,7 @@ class AddCityInteractor {
     /// - returns trigger the success *addCityProtocol* if the weather is successfully added to coredata
     /// - returns trigger the failed *addCityProtocol* if the weather failed adding to coredata
     private func saveCityCurrentWeather(_ cityWeather: CurrentCityWeatherModel) {
-        let coreDataInteractor = CoreDataInteractor()
+        let coreDataInteractor = CurrentCityWeatherCoreDataInteractor()
         coreDataInteractor.removedSavedWeatherFromCoreData(with: cityWeather.name)
         switch coreDataInteractor.saveCurrentCityWeather(cityWeather) {
         case .success(let currentCityWeather):

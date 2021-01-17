@@ -26,7 +26,18 @@ class URLGenerator {
     
     /// - Returns a QueryItems list needed for get current city weather call
     func currentCityWeatherQueryItems(cityName: String, apiKey: String?) -> [URLQueryItem] {
-        return [URLQueryItem(name: "q", value: cityName), URLQueryItem(name: "appid", value: apiKey ?? ""), URLQueryItem(name: "units", value: "metric")]
+        return [URLQueryItem(name: "q", value: cityName),
+                URLQueryItem(name: "appid", value: apiKey ?? ""),
+                URLQueryItem(name: "units", value: "metric")]
+    }
+    
+    /// - Returns a QueryItems list needed for get weatherDetails call
+    func weatherDetailsQueryItems(with lat: Double, lon: Double, apiKey: String?) -> [URLQueryItem] {
+        return [URLQueryItem(name: "lat", value: String(lat)),
+                URLQueryItem(name: "lon", value: String(lon)),
+                URLQueryItem(name: "exclude", value: "minutely"),
+                URLQueryItem(name: "appid", value: apiKey ?? ""),
+                URLQueryItem(name: "units", value: "metric")]
     }
 }
 
