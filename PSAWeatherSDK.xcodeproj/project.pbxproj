@@ -42,6 +42,12 @@
 		3356ACBB25B3BBFB006F32FF /* CurrentCityWeather+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3356ACAF25B3BBFB006F32FF /* CurrentCityWeather+CoreDataClass.swift */; };
 		3356ACBC25B3BBFB006F32FF /* CurrentCityWeather+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3356ACB025B3BBFB006F32FF /* CurrentCityWeather+CoreDataProperties.swift */; };
 		3356ACCC25B3BC7E006F32FF /* PSAWeatherSDK.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3356ABE125B35C69006F32FF /* PSAWeatherSDK.xcdatamodeld */; };
+		33B0EBE025B45AAE009F4E51 /* NetworkSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B0EBDF25B45AAE009F4E51 /* NetworkSessionMock.swift */; };
+		33B0EBE825B45AD9009F4E51 /* WebServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B0EBE725B45AD9009F4E51 /* WebServiceTest.swift */; };
+		33B0EBED25B45C00009F4E51 /* CurrentWeather.json in Resources */ = {isa = PBXBuildFile; fileRef = 33B0EBEC25B45C00009F4E51 /* CurrentWeather.json */; };
+		33B0EBF625B46174009F4E51 /* CoreDataInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B0EBF525B46174009F4E51 /* CoreDataInteractorTest.swift */; };
+		33B0EBFD25B468D1009F4E51 /* PSAWeatherSDK.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3356ABE125B35C69006F32FF /* PSAWeatherSDK.xcdatamodeld */; };
+		33B0EC1725B46CAB009F4E51 /* CityInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B0EC1625B46CAB009F4E51 /* CityInteractorTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +57,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 3356ABA925B35B52006F32FF;
 			remoteInfo = PSAWeatherSDK;
+		};
+		33B0EC0A25B46B08009F4E51 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3356ABA125B35B52006F32FF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3356ABC925B35BEC006F32FF;
+			remoteInfo = PSAWeatherSDKExamples;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -94,6 +107,11 @@
 		3356ACAE25B3BBFB006F32FF /* Coord+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Coord+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3356ACAF25B3BBFB006F32FF /* CurrentCityWeather+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurrentCityWeather+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3356ACB025B3BBFB006F32FF /* CurrentCityWeather+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurrentCityWeather+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		33B0EBDF25B45AAE009F4E51 /* NetworkSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSessionMock.swift; sourceTree = "<group>"; };
+		33B0EBE725B45AD9009F4E51 /* WebServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceTest.swift; sourceTree = "<group>"; };
+		33B0EBEC25B45C00009F4E51 /* CurrentWeather.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CurrentWeather.json; sourceTree = "<group>"; };
+		33B0EBF525B46174009F4E51 /* CoreDataInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataInteractorTest.swift; sourceTree = "<group>"; };
+		33B0EC1625B46CAB009F4E51 /* CityInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityInteractorTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +176,9 @@
 		3356ABB725B35B52006F32FF /* PSAWeatherSDKTests */ = {
 			isa = PBXGroup;
 			children = (
+				33B0EC1525B46C93009F4E51 /* CityModuleTests */,
+				33B0EBF425B46144009F4E51 /* LocalServicesTests */,
+				33B0EBDB25B45A68009F4E51 /* RemoteServiceTests */,
 				3356ABB825B35B52006F32FF /* PSAWeatherSDKTests.swift */,
 				3356ABBA25B35B52006F32FF /* Info.plist */,
 			);
@@ -319,6 +340,32 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		33B0EBDB25B45A68009F4E51 /* RemoteServiceTests */ = {
+			isa = PBXGroup;
+			children = (
+				33B0EBDF25B45AAE009F4E51 /* NetworkSessionMock.swift */,
+				33B0EBE725B45AD9009F4E51 /* WebServiceTest.swift */,
+				33B0EBEC25B45C00009F4E51 /* CurrentWeather.json */,
+			);
+			path = RemoteServiceTests;
+			sourceTree = "<group>";
+		};
+		33B0EBF425B46144009F4E51 /* LocalServicesTests */ = {
+			isa = PBXGroup;
+			children = (
+				33B0EBF525B46174009F4E51 /* CoreDataInteractorTest.swift */,
+			);
+			path = LocalServicesTests;
+			sourceTree = "<group>";
+		};
+		33B0EC1525B46C93009F4E51 /* CityModuleTests */ = {
+			isa = PBXGroup;
+			children = (
+				33B0EC1625B46CAB009F4E51 /* CityInteractorTest.swift */,
+			);
+			path = CityModuleTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -363,6 +410,7 @@
 			);
 			dependencies = (
 				3356ABB625B35B52006F32FF /* PBXTargetDependency */,
+				33B0EC0B25B46B08009F4E51 /* PBXTargetDependency */,
 			);
 			name = PSAWeatherSDKTests;
 			productName = PSAWeatherSDKTests;
@@ -401,6 +449,7 @@
 					};
 					3356ABB225B35B52006F32FF = {
 						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 3356ABC925B35BEC006F32FF;
 					};
 					3356ABC925B35BEC006F32FF = {
 						CreatedOnToolsVersion = 12.3;
@@ -439,6 +488,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33B0EBED25B45C00009F4E51 /* CurrentWeather.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,6 +542,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3356ABB925B35B52006F32FF /* PSAWeatherSDKTests.swift in Sources */,
+				33B0EBF625B46174009F4E51 /* CoreDataInteractorTest.swift in Sources */,
+				33B0EBE025B45AAE009F4E51 /* NetworkSessionMock.swift in Sources */,
+				33B0EBFD25B468D1009F4E51 /* PSAWeatherSDK.xcdatamodeld in Sources */,
+				33B0EBE825B45AD9009F4E51 /* WebServiceTest.swift in Sources */,
+				33B0EC1725B46CAB009F4E51 /* CityInteractorTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,6 +568,11 @@
 			isa = PBXTargetDependency;
 			target = 3356ABA925B35B52006F32FF /* PSAWeatherSDK */;
 			targetProxy = 3356ABB525B35B52006F32FF /* PBXContainerItemProxy */;
+		};
+		33B0EC0B25B46B08009F4E51 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3356ABC925B35BEC006F32FF /* PSAWeatherSDKExamples */;
+			targetProxy = 33B0EC0A25B46B08009F4E51 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -588,7 +648,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -646,7 +706,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -711,6 +771,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = PSAWeatherSDKTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -722,6 +783,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PSAWeatherSDKExamples.app/PSAWeatherSDKExamples";
 			};
 			name = Debug;
 		};
@@ -729,6 +791,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = PSAWeatherSDKTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -740,6 +803,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PSAWeatherSDKExamples.app/PSAWeatherSDKExamples";
 			};
 			name = Release;
 		};
