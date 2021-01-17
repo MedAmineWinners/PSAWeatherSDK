@@ -63,6 +63,8 @@ class WeatherDetailsCoreDataInteractor {
         weatherDetails.hourlyForcast = NSSet.init(array: hourlyForcastList)
         
         currentWeather.weatherDetails = weatherDetails
+            
+        //weatherDetails.ofCurrentCity = currentWeather
         
         do {
             try PersistenceService.context.save()

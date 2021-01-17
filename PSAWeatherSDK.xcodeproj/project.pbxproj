@@ -49,6 +49,8 @@
 		3362947825B4CCA300807589 /* CurrentCityWeather+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3362947625B4CCA300807589 /* CurrentCityWeather+CoreDataClass.swift */; };
 		3362947925B4CCA300807589 /* CurrentCityWeather+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3362947725B4CCA300807589 /* CurrentCityWeather+CoreDataProperties.swift */; };
 		3362948125B4CF7100807589 /* PSAWeatherDetailsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3362948025B4CF7100807589 /* PSAWeatherDetailsExtension.swift */; };
+		336E2BE725B4F26E00921B95 /* WeatherDetailsCoreDataInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336E2BE625B4F26E00921B95 /* WeatherDetailsCoreDataInteractorTest.swift */; };
+		336E2BEC25B4F31600921B95 /* WeatherDetails.json in Resources */ = {isa = PBXBuildFile; fileRef = 336E2BEB25B4F31600921B95 /* WeatherDetails.json */; };
 		337A1A2A25B4CFF7006E93AA /* WeatherDetailsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337A1A2925B4CFF7006E93AA /* WeatherDetailsProtocol.swift */; };
 		337A1A2F25B4D005006E93AA /* WeatherDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337A1A2E25B4D005006E93AA /* WeatherDetailsInteractor.swift */; };
 		33B0EBE825B45AD9009F4E51 /* WebServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B0EBE725B45AD9009F4E51 /* WebServiceTest.swift */; };
@@ -125,6 +127,8 @@
 		3362947625B4CCA300807589 /* CurrentCityWeather+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurrentCityWeather+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3362947725B4CCA300807589 /* CurrentCityWeather+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurrentCityWeather+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3362948025B4CF7100807589 /* PSAWeatherDetailsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSAWeatherDetailsExtension.swift; sourceTree = "<group>"; };
+		336E2BE625B4F26E00921B95 /* WeatherDetailsCoreDataInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailsCoreDataInteractorTest.swift; sourceTree = "<group>"; };
+		336E2BEB25B4F31600921B95 /* WeatherDetails.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WeatherDetails.json; sourceTree = "<group>"; };
 		337A1A2925B4CFF7006E93AA /* WeatherDetailsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailsProtocol.swift; sourceTree = "<group>"; };
 		337A1A2E25B4D005006E93AA /* WeatherDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailsInteractor.swift; sourceTree = "<group>"; };
 		33B0EBE725B45AD9009F4E51 /* WebServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceTest.swift; sourceTree = "<group>"; };
@@ -379,6 +383,7 @@
 				33B0EBE725B45AD9009F4E51 /* WebServiceTest.swift */,
 				33B0EBEC25B45C00009F4E51 /* CurrentWeather.json */,
 				33B0EC3F25B47E59009F4E51 /* NetworkSessionMock.swift */,
+				336E2BEB25B4F31600921B95 /* WeatherDetails.json */,
 			);
 			path = RemoteServiceTests;
 			sourceTree = "<group>";
@@ -387,6 +392,7 @@
 			isa = PBXGroup;
 			children = (
 				33B0EBF525B46174009F4E51 /* CurrentCoreDataInteractorTest.swift */,
+				336E2BE625B4F26E00921B95 /* WeatherDetailsCoreDataInteractorTest.swift */,
 			);
 			path = LocalServicesTests;
 			sourceTree = "<group>";
@@ -570,6 +576,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33B0EBED25B45C00009F4E51 /* CurrentWeather.json in Resources */,
+				336E2BEC25B4F31600921B95 /* WeatherDetails.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -637,6 +644,7 @@
 				33B0EC4025B47E59009F4E51 /* NetworkSessionMock.swift in Sources */,
 				33B0EBF625B46174009F4E51 /* CurrentCoreDataInteractorTest.swift in Sources */,
 				33B0EBFD25B468D1009F4E51 /* PSAWeatherSDK.xcdatamodeld in Sources */,
+				336E2BE725B4F26E00921B95 /* WeatherDetailsCoreDataInteractorTest.swift in Sources */,
 				33B0EBE825B45AD9009F4E51 /* WebServiceTest.swift in Sources */,
 				33B0EC1725B46CAB009F4E51 /* CityInteractorTest.swift in Sources */,
 			);
