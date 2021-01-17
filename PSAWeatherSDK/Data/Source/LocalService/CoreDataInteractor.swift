@@ -77,6 +77,20 @@ class CoreDataInteractor {
         }
     }
     
+    /// remove a specific weather with CityName
+    /// - Parameter : cityName 
+    func removedSavedWeatherFromCoreData(with cityName: String) {
+        let fetchRequest = NSFetchRequest<CurrentCityWeather>(entityName: "CurrentCityWeather")
+        if let result = try? PersistenceService.context.fetch(fetchRequest) {
+            let currentCityWeatherToDelete = result.first {
+                $0.cityName == cityName
+            }
+            if let currentWeather = currentCityWeatherToDelete {
+                PersistenceService.context.delete(currentWeather)
+            }
+        }
+    }
+    
     /// - Returns a list of the saved CurrentCityWeather 
     func getSavedWeathersFromCoreData() -> [CurrentCityWeather]? {
         let request = NSFetchRequest<CurrentCityWeather>(entityName: "CurrentCityWeather")
