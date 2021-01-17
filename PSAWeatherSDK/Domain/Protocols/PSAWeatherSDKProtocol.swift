@@ -20,4 +20,11 @@ public protocol PSAWeatherSDKProtocol {
     /// - Parameter cityName: the name of the city
     /// - Remark: addCity method result will be tracked by **PSAWeatherSDKDelegate**
     func addCity(with cityName: String)
+    
+    
+    /// getCityWeatherDetails method allow user to get weatherDetails
+    /// the method result *Hourly* and *daily* forcast for a given currentCityWeather
+    /// - Parameter currentCityWeather: the currentCityWeather
+    /// - Remark: the method result will be tracked by **PSAWeatherSDKDelegate**
+    func getCityWeatherDetails(of currentCityWeather: CurrentCityWeather)
 }

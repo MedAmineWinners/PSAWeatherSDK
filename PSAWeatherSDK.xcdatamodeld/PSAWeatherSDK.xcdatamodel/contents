@@ -17,6 +17,7 @@
         <relationship name="clouds" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Clouds" inverseName="ofCurrentWeather" inverseEntity="Clouds"/>
         <relationship name="coord" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Coord" inverseName="ofCurrentWeather" inverseEntity="Coord"/>
         <relationship name="main" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Main" inverseName="ofCurrentWeather" inverseEntity="Main"/>
+        <relationship name="weatherDetails" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WeatherDetails" inverseName="ofCurrentCity" inverseEntity="WeatherDetails"/>
         <relationship name="weathers" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Weather" inverseName="ofCurrentCity" inverseEntity="Weather"/>
         <relationship name="wind" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Wind" inverseName="ofCurrentWeather" inverseEntity="Wind"/>
         <uniquenessConstraints>
@@ -24,6 +25,24 @@
                 <constraint value="cityName"/>
             </uniquenessConstraint>
         </uniquenessConstraints>
+    </entity>
+    <entity name="Daily" representedClassName="Daily" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="humidity" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="maxTemperature" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="minTemperature" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="pressure" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="sunrise" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="sunset" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="ofWeatherDetails" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WeatherDetails" inverseName="dailyForcast" inverseEntity="WeatherDetails"/>
+        <relationship name="weathers" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Weather" inverseName="ofDailyForcast" inverseEntity="Weather"/>
+    </entity>
+    <entity name="Hourly" representedClassName="Hourly" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="feelsLike" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="temperature" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="ofWeatherDetails" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="WeatherDetails" inverseName="hourlyForcast" inverseEntity="WeatherDetails"/>
+        <relationship name="weathers" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Weather" inverseName="ofHourlyForcast" inverseEntity="Weather"/>
     </entity>
     <entity name="Main" representedClassName="Main" syncable="YES">
         <attribute name="feelsLike" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
@@ -40,6 +59,13 @@
         <attribute name="main" optional="YES" attributeType="String"/>
         <attribute name="weatherDescription" optional="YES" attributeType="String"/>
         <relationship name="ofCurrentCity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CurrentCityWeather" inverseName="weathers" inverseEntity="CurrentCityWeather"/>
+        <relationship name="ofDailyForcast" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Daily" inverseName="weathers" inverseEntity="Daily"/>
+        <relationship name="ofHourlyForcast" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hourly" inverseName="weathers" inverseEntity="Hourly"/>
+    </entity>
+    <entity name="WeatherDetails" representedClassName="WeatherDetails" syncable="YES">
+        <relationship name="dailyForcast" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Daily" inverseName="ofWeatherDetails" inverseEntity="Daily"/>
+        <relationship name="hourlyForcast" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Hourly" inverseName="ofWeatherDetails" inverseEntity="Hourly"/>
+        <relationship name="ofCurrentCity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CurrentCityWeather" inverseName="weatherDetails" inverseEntity="CurrentCityWeather"/>
     </entity>
     <entity name="Wind" representedClassName="Wind" syncable="YES">
         <attribute name="degree" optional="YES" attributeType="Integer 16" defaultValueString="0.0" usesScalarValueType="YES"/>
@@ -47,11 +73,14 @@
         <relationship name="ofCurrentWeather" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CurrentCityWeather" inverseName="wind" inverseEntity="CurrentCityWeather"/>
     </entity>
     <elements>
-        <element name="Clouds" positionX="-149.88671875" positionY="30.31640625" width="128" height="73"/>
-        <element name="Coord" positionX="205.28125" positionY="62.0625" width="128" height="88"/>
-        <element name="CurrentCityWeather" positionX="86.38671875" positionY="-112.58203125" width="128" height="178"/>
-        <element name="Main" positionX="317.5625" positionY="33.19921875" width="128" height="148"/>
-        <element name="Weather" positionX="85.94921875" positionY="106.94140625" width="128" height="118"/>
-        <element name="Wind" positionX="-33.578125" positionY="62.6796875" width="128" height="88"/>
+        <element name="Clouds" positionX="-394.50390625" positionY="80.19140625" width="128" height="73"/>
+        <element name="Coord" positionX="354.1171875" positionY="202.69921875" width="128" height="88"/>
+        <element name="CurrentCityWeather" positionX="85.81640625" positionY="-177.95703125" width="128" height="193"/>
+        <element name="Daily" positionX="309.33203125" positionY="-267.9140625" width="128" height="178"/>
+        <element name="Hourly" positionX="-124.28515625" positionY="-268.28125" width="128" height="118"/>
+        <element name="Main" positionX="561.3203125" positionY="33.5" width="128" height="148"/>
+        <element name="Weather" positionX="85.5859375" positionY="58.94140625" width="128" height="148"/>
+        <element name="WeatherDetails" positionX="53.953125" positionY="-328.87109375" width="128" height="88"/>
+        <element name="Wind" positionX="-216.60546875" positionY="186.48828125" width="128" height="88"/>
     </elements>
 </model>
