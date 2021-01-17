@@ -6,10 +6,21 @@
 //
 
 import Foundation
-public extension PSAWeatherSDK {
-    
-}
+
 
 extension PSAWeatherSDK {
+    public func addCity(with cityName: String) {
+        let addCityInteractor = AddCityInteractor(addCityProtocol: self)
+        addCityInteractor.addCity(with: cityName, apiKey: self.apiKey)
+    }
+}
+
+extension PSAWeatherSDK: AddCityProtocol {
+    func addCityProtocolSucceed(currentCityWeather: CurrentCityWeather) {
+        self.delegate?.PSAWeatherSDKDidFinishWithSuccess(result: currentCityWeather)
+    }
     
+    func addCityProtocolFailed(with error: String) {
+        self.delegate?.PSAWeatherSDKDidFailWithError(error: error)
+    }
 }
