@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+protocol AddCityProtocol {
+    /// delegate function triggered when AddCityInteractor request *Succeed*
+    /// - Returns: CurrentCityWeather
+    func addCityProtocolSucceed(currentCityWeather: CurrentCityWeather)
+    
+    /// delegate function triggered when AddCityInteractor request *failed*
+    /// - Returns: error
+    func addCityProtocolFailed(with error: String)
+}
