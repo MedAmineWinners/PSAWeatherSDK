@@ -39,6 +39,13 @@ class URLGenerator {
                 URLQueryItem(name: "appid", value: apiKey ?? ""),
                 URLQueryItem(name: "units", value: "metric")]
     }
+    
+    /// - Returns a QueryItems list needed for getCurrentCitiesWeather call
+    func currentCitiesWeatherQueryItems(cityIds: [String], apiKey: String?) -> [URLQueryItem] {
+        return [URLQueryItem(name: "id", value: cityIds.joined(separator: ",")),
+                URLQueryItem(name: "appid", value: apiKey ?? ""),
+                URLQueryItem(name: "units", value: "metric")]
+    }
 }
 
 /// SearchPath enum propose for us two cases
@@ -47,4 +54,5 @@ class URLGenerator {
 enum SearchPath: String {
     case weatherCall = "/data/2.5/onecall"
     case cityCall = "/data/2.5/weather"
+    case cityList = "/data/2.5/group"
 }

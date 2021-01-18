@@ -22,9 +22,23 @@ public protocol PSAWeatherSDKProtocol {
     func addCity(with cityName: String)
     
     
+    /// removeCurrentCityWeather method allow user to remove a cityWeather from local database
+    /// the method verify if the city exist, and remove it from the database
+    /// - Parameter currentCityWeather: the currentCityWeather that user want to delete
+    /// - Remark: addCity method result will be tracked by **PSAWeatherSDKDelegate**
+    func removeCurrentCityWeather(currentCityWeather: CurrentCityWeather)
+    
+    
     /// getCityWeatherDetails method allow user to get weatherDetails
     /// the method result *Hourly* and *daily* forcast for a given currentCityWeather
     /// - Parameter currentCityWeather: the currentCityWeather
     /// - Remark: the method result will be tracked by **PSAWeatherSDKDelegate**
     func getCityWeatherDetails(of currentCityWeather: CurrentCityWeather)
+    
+    /// getSavedCitiesCurrentWeatherList method allow user to get all the current city weather saved to coreData
+    /// the method result **[CurrentCityWeather]**
+    /// - Remark: the method result will be tracked by **PSAWeatherSDKDelegate**
+    func getSavedCitiesCurrentWeatherList()
+    
+    
 }

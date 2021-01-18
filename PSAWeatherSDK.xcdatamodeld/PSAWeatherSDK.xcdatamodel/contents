@@ -11,6 +11,7 @@
     </entity>
     <entity name="CurrentCityWeather" representedClassName="CurrentCityWeather" syncable="YES">
         <attribute name="base" optional="YES" attributeType="String"/>
+        <attribute name="cityId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="cityName" optional="YES" attributeType="String"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="visibility" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
@@ -75,7 +76,7 @@
     <elements>
         <element name="Clouds" positionX="-394.50390625" positionY="80.19140625" width="128" height="73"/>
         <element name="Coord" positionX="354.1171875" positionY="202.69921875" width="128" height="88"/>
-        <element name="CurrentCityWeather" positionX="85.81640625" positionY="-177.95703125" width="128" height="193"/>
+        <element name="CurrentCityWeather" positionX="85.81640625" positionY="-177.95703125" width="128" height="208"/>
         <element name="Daily" positionX="309.33203125" positionY="-267.9140625" width="128" height="178"/>
         <element name="Hourly" positionX="-124.28515625" positionY="-268.28125" width="128" height="118"/>
         <element name="Main" positionX="561.3203125" positionY="33.5" width="128" height="148"/>

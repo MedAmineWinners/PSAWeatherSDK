@@ -47,6 +47,7 @@ class CurrentCityWeatherCoreDataInteractor {
             
             let currentCityWeather = CurrentCityWeather(context: PersistenceService.context)
             currentCityWeather.cityName = cityWeather.name
+            currentCityWeather.cityId = Int64(cityWeather.id)
             currentCityWeather.date = Date(timeIntervalSince1970: TimeInterval(cityWeather.dt))
             currentCityWeather.visibility = Int16(cityWeather.visibility)
             
