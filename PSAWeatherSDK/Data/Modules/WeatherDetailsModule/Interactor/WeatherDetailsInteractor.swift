@@ -29,6 +29,8 @@ class WeatherDetailsInteractor {
                 self.saveWeatherDetails(of: currentCityWeather, with: weatherDetails)
             case .failure(let error):
                 self.weatherDetailsProtocol?.weatherDetailsProtocolFailed(error: error.localizedDescription)
+            case .apiFailure(let apiError):
+                self.weatherDetailsProtocol?.weatherDetailsProtocolFailed(error: apiError.message)
             }
         }
     }

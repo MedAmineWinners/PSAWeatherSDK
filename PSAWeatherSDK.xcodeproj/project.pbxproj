@@ -16,6 +16,10 @@
 		3325DBB125B5CC6700FDE8ED /* CurrentCitiesWeather.json in Resources */ = {isa = PBXBuildFile; fileRef = 3325DBB025B5CC6700FDE8ED /* CurrentCitiesWeather.json */; };
 		3325DBB925B5CCA400FDE8ED /* CurrentCitiesWeatherCoreDataTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3325DBB825B5CCA400FDE8ED /* CurrentCitiesWeatherCoreDataTest.swift */; };
 		3325DBC225B5CE3100FDE8ED /* CurrentCitiesWeatherInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3325DBC125B5CE3100FDE8ED /* CurrentCitiesWeatherInteractorTest.swift */; };
+		3355362025B601AB0070DAD6 /* PSAWeatherSDKError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3355361F25B601AB0070DAD6 /* PSAWeatherSDKError.swift */; };
+		3355362525B603FE0070DAD6 /* errors in Resources */ = {isa = PBXBuildFile; fileRef = 3355362425B603FE0070DAD6 /* errors */; };
+		3355362A25B60D140070DAD6 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3355362925B60D140070DAD6 /* ApiError.swift */; };
+		3355362F25B614A10070DAD6 /* ApiError.json in Resources */ = {isa = PBXBuildFile; fileRef = 3355362E25B614A10070DAD6 /* ApiError.json */; };
 		3356ABB425B35B52006F32FF /* PSAWeatherSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3356ABAA25B35B52006F32FF /* PSAWeatherSDK.framework */; };
 		3356ABB925B35B52006F32FF /* PSAWeatherSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3356ABB825B35B52006F32FF /* PSAWeatherSDKTests.swift */; };
 		3356ABBB25B35B52006F32FF /* PSAWeatherSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 3356ABAD25B35B52006F32FF /* PSAWeatherSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -99,6 +103,10 @@
 		3325DBB025B5CC6700FDE8ED /* CurrentCitiesWeather.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CurrentCitiesWeather.json; sourceTree = "<group>"; };
 		3325DBB825B5CCA400FDE8ED /* CurrentCitiesWeatherCoreDataTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentCitiesWeatherCoreDataTest.swift; sourceTree = "<group>"; };
 		3325DBC125B5CE3100FDE8ED /* CurrentCitiesWeatherInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentCitiesWeatherInteractorTest.swift; sourceTree = "<group>"; };
+		3355361F25B601AB0070DAD6 /* PSAWeatherSDKError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSAWeatherSDKError.swift; sourceTree = "<group>"; };
+		3355362425B603FE0070DAD6 /* errors */ = {isa = PBXFileReference; lastKnownFileType = text; path = errors; sourceTree = "<group>"; };
+		3355362925B60D140070DAD6 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		3355362E25B614A10070DAD6 /* ApiError.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ApiError.json; sourceTree = "<group>"; };
 		3356ABAA25B35B52006F32FF /* PSAWeatherSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PSAWeatherSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3356ABAD25B35B52006F32FF /* PSAWeatherSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSAWeatherSDK.h; sourceTree = "<group>"; };
 		3356ABAE25B35B52006F32FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -234,9 +242,18 @@
 			path = CurrentCitiesWeatherModuleTests;
 			sourceTree = "<group>";
 		};
+		3355361E25B5FBE20070DAD6 /* ErrorHandler */ = {
+			isa = PBXGroup;
+			children = (
+				3355361F25B601AB0070DAD6 /* PSAWeatherSDKError.swift */,
+			);
+			path = ErrorHandler;
+			sourceTree = "<group>";
+		};
 		3356ABA025B35B52006F32FF = {
 			isa = PBXGroup;
 			children = (
+				3355362425B603FE0070DAD6 /* errors */,
 				3356ABE125B35C69006F32FF /* PSAWeatherSDK.xcdatamodeld */,
 				3356ABAC25B35B52006F32FF /* PSAWeatherSDK */,
 				3356ABB725B35B52006F32FF /* PSAWeatherSDKTests */,
@@ -327,6 +344,7 @@
 		3356ABEA25B364E7006F32FF /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				3355361E25B5FBE20070DAD6 /* ErrorHandler */,
 				3356AC4E25B38864006F32FF /* LocalService */,
 				3356AC0F25B37686006F32FF /* RemoteService */,
 			);
@@ -409,6 +427,7 @@
 				3356AC1025B376A3006F32FF /* WebService .swift */,
 				3356AC1825B3771E006F32FF /* NetworkError.swift */,
 				3356AC1D25B37855006F32FF /* URLGenerator.swift */,
+				3355362925B60D140070DAD6 /* ApiError.swift */,
 			);
 			path = RemoteService;
 			sourceTree = "<group>";
@@ -458,6 +477,7 @@
 				33B0EC3F25B47E59009F4E51 /* NetworkSessionMock.swift */,
 				336E2BEB25B4F31600921B95 /* WeatherDetails.json */,
 				3325DBB025B5CC6700FDE8ED /* CurrentCitiesWeather.json */,
+				3355362E25B614A10070DAD6 /* ApiError.json */,
 			);
 			path = RemoteServiceTests;
 			sourceTree = "<group>";
@@ -643,6 +663,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3355362525B603FE0070DAD6 /* errors in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -651,6 +672,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33B0EBED25B45C00009F4E51 /* CurrentWeather.json in Resources */,
+				3355362F25B614A10070DAD6 /* ApiError.json in Resources */,
 				336E2BEC25B4F31600921B95 /* WeatherDetails.json in Resources */,
 				3325DBB125B5CC6700FDE8ED /* CurrentCitiesWeather.json in Resources */,
 			);
@@ -686,6 +708,7 @@
 				337A1A2A25B4CFF7006E93AA /* WeatherDetailsProtocol.swift in Sources */,
 				3356AC7425B39305006F32FF /* Extenions.swift in Sources */,
 				3325DB9725B59B6000FDE8ED /* CurrentCitiesWeatherListCoreDataInteractor.swift in Sources */,
+				3355362025B601AB0070DAD6 /* PSAWeatherSDKError.swift in Sources */,
 				3362948125B4CF7100807589 /* PSAWeatherDetailsExtension.swift in Sources */,
 				3325DB9225B5991400FDE8ED /* CurrentCitiesWeatherList.swift in Sources */,
 				33B0EC5625B48CEB009F4E51 /* WeatherDetailsCoreDataInteractor.swift in Sources */,
@@ -698,6 +721,7 @@
 				3356AC1E25B37855006F32FF /* URLGenerator.swift in Sources */,
 				3325DBA725B5B41800FDE8ED /* PSACurrentCitiesWeatherExtension.swift in Sources */,
 				3362947825B4CCA300807589 /* CurrentCityWeather+CoreDataClass.swift in Sources */,
+				3355362A25B60D140070DAD6 /* ApiError.swift in Sources */,
 				3356ABF425B36C49006F32FF /* PSAWeatherSDKProtocol.swift in Sources */,
 				3325DBA225B5B37500FDE8ED /* CurrentCitiesWeatherProtocol.swift in Sources */,
 				3356AC4A25B387F1006F32FF /* PersistentService.swift in Sources */,

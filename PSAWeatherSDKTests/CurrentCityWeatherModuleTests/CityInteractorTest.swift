@@ -11,10 +11,10 @@ import XCTest
 class TestCurrentCityWeatherInteractor: XCTestCase {
     let session = NetworkSessionMock()
     let psaWeatherSDKMock = PSAWeatherSDKMock()
-    var addCityInteractor: AddCityInteractor?
+    var addCityInteractor: CurrentCityWeatherInteractor?
     override func setUp() {
         super.setUp()
-        addCityInteractor = AddCityInteractor(addCityProtocol: psaWeatherSDKMock)
+        addCityInteractor = CurrentCityWeatherInteractor(addCityProtocol: psaWeatherSDKMock, removeCityProtocol: psaWeatherSDKMock)
         addCityInteractor?.webService = WebService(session: session)
     }
 
@@ -56,9 +56,13 @@ class TestCurrentCityWeatherInteractor: XCTestCase {
     }
 }
 
-class PSAWeatherSDKMock: AddCityProtocol {
+class PSAWeatherSDKMock: AddCityProtocol, RemoveCityProtocol {
+    
     var addCityProtocolSucceedCalled = false
     var addCityProtocolFailedCalled = false
+    
+    var removeCityProtocolSucceedCalled = false
+    var removeCityProtocolFailedCalled = false
    
 
     func addCityProtocolSucceed(currentCityWeather: CurrentCityWeather) {
@@ -67,5 +71,13 @@ class PSAWeatherSDKMock: AddCityProtocol {
     
     func addCityProtocolFailed(with error: String) {
         addCityProtocolFailedCalled = true
+    }
+    
+    func removeCityProtocolSucceed() {
+        removeCityProtocolSucceedCalled = true
+    }
+    
+    func removeCityProtocolFailed(with error: String) {
+        removeCityProtocolFailedCalled = true
     }
 }

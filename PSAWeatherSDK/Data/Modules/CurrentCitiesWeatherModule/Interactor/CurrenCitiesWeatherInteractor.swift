@@ -27,6 +27,8 @@ class CurrentCitiesWeatherInteractor {
                 self.saveCitiesCurrentWeather(currentCitiesWeatherModel.list)
             case .failure(let error):
                 self.currentCitiesWeatherProtocol?.CurrentCitiesWeatherProtocolFailed(with: error.localizedDescription)
+            case .apiFailure(let apiError):
+                self.currentCitiesWeatherProtocol?.CurrentCitiesWeatherProtocolFailed(with: apiError.message)
             }
         }
     }

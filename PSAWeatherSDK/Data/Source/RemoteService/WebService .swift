@@ -26,6 +26,12 @@ struct Resource<T: Codable> {
     let url: URL
 }
 
+enum PSASDKResult<T, SDKError, NetworkError> {
+    case success(T)
+    case apiFailure(ApiError)
+    case failure(NetworkError)
+}
+
 class WebService {
     private let session: NetworkSession
     
@@ -33,7 +39,7 @@ class WebService {
         self.session = session
     }
     
-    func load<T>(resource: Resource<T>, completion: @escaping (Result<T, NetWorkError>) -> Void) {
+    func load<T>(resource: Resource<T>, completion: @escaping (PSASDKResult<T, ApiError, NetWorkError>) -> Void) {
         session.loadData(from: resource.url) { data, error in
             guard let data = data, error == nil else {
                 completion(.failure(.domainError))
@@ -44,7 +50,10 @@ class WebService {
                 DispatchQueue.main.async {
                     completion(.success(result))
                 }
-            } else {
+            } else if let apiError = try? JSONDecoder().decode(ApiError.self, from: data) {
+                completion(.apiFailure(apiError))
+            }
+            else {
                 completion(.failure(.decodingError))
             }
         }

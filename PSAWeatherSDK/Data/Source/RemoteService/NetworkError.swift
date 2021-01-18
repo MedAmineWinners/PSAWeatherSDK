@@ -12,3 +12,25 @@ enum NetWorkError: Error {
     case domainError
     case networkError
 }
+
+extension NetWorkError: LocalizedError {
+    var errorDescription: String? {
+        switch self {
+        case .decodingError:
+            return NSLocalizedString(
+                "An Error occured please try again",
+                comment: ""
+            )
+        case .domainError:
+            return NSLocalizedString(
+                "An Error occured please try again",
+                comment: ""
+            )
+        case .networkError:
+            return NSLocalizedString(
+                "An Error occured please try again",
+                comment: ""
+            )
+        }
+    }
+}
