@@ -8,11 +8,21 @@
 import Foundation
 
 protocol AddCityProtocol {
-    /// delegate function triggered when AddCityInteractor request *Succeed*
+    /// delegate function triggered when CurrentCityWeatherInteractor add request *Succeed*
     /// - Returns: CurrentCityWeather
     func addCityProtocolSucceed(currentCityWeather: CurrentCityWeather)
     
-    /// delegate function triggered when AddCityInteractor request *failed*
+    /// delegate function triggered when CurrentCityWeatherInteractor request *failed*
     /// - Returns: error
     func addCityProtocolFailed(with error: String)
+}
+
+protocol RemoveCityProtocol {
+    
+    /// delegate function triggered when CurrentCityWeatherInteractor remove request *Succeed*
+    func removeCityProtocolSucceed()
+    
+    /// delegate function triggered when CurrentCityWeatherInteractor request *failed*
+    /// - Returns: error
+    func removeCityProtocolFailed(with error: String)
 }

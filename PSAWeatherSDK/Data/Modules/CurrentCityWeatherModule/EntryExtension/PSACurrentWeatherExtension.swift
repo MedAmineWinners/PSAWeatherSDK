@@ -10,17 +10,31 @@ import Foundation
 
 extension PSAWeatherSDK {
     public func addCity(with cityName: String) {
-        let addCityInteractor = AddCityInteractor(addCityProtocol: self)
-        addCityInteractor.addCity(with: cityName, apiKey: self.apiKey)
+        let interactor = CurrentCityWeatherInteractor(addCityProtocol: self, removeCityProtocol: self)
+        interactor.addCity(with: cityName, apiKey: self.apiKey)
+    }
+    
+    public func removeCurrentCityWeather(currentCityWeather: CurrentCityWeather) {
+        let interactor = CurrentCityWeatherInteractor(addCityProtocol: self, removeCityProtocol: self)
+        interactor.removeCurrentCityWeather(currentCityWeather: currentCityWeather)
     }
 }
 
-extension PSAWeatherSDK: AddCityProtocol {
+extension PSAWeatherSDK: AddCityProtocol, RemoveCityProtocol {
+    
     func addCityProtocolSucceed(currentCityWeather: CurrentCityWeather) {
         self.delegate?.PSAWeatherSDKDidFinishWithSuccess(result: currentCityWeather)
     }
     
     func addCityProtocolFailed(with error: String) {
+        self.delegate?.PSAWeatherSDKDidFailWithError(error: error)
+    }
+    
+    func removeCityProtocolSucceed() {
+        self.delegate?.PSAWeatherSDKDidFinishWithSuccess(result: true)
+    }
+    
+    func removeCityProtocolFailed(with error: String) {
         self.delegate?.PSAWeatherSDKDidFailWithError(error: error)
     }
 }

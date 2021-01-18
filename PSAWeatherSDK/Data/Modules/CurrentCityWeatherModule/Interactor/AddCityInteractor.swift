@@ -7,13 +7,15 @@
 
 import Foundation
 
-class AddCityInteractor {
+class CurrentCityWeatherInteractor {
     
     var addCityProtocol: AddCityProtocol?
+    var removeCityProtocol: RemoveCityProtocol?
     var webService = WebService()
     
-    init(addCityProtocol: AddCityProtocol) {
+    init(addCityProtocol: AddCityProtocol, removeCityProtocol: RemoveCityProtocol) {
         self.addCityProtocol = addCityProtocol
+        self.removeCityProtocol = removeCityProtocol
     }
     
     /// this method request the current city weather and trigger the succeed and failed addCityProtocol in case of success or fail
@@ -28,7 +30,26 @@ class AddCityInteractor {
                 self.saveCityCurrentWeather(cityWeather)
             case .failure(let error):
                 self.addCityProtocol?.addCityProtocolFailed(with: error.localizedDescription)
+            case .apiFailure(let apiError):
+                self.addCityProtocol?.addCityProtocolFailed(with: apiError.message)
             }
+        }
+    }
+    
+    /// this method check if *CurrentCityWeather* exists in database and remove it
+    /// - returns trigger the success *RemoveCityProtocol* if the weather is successfully deleted to coredata
+    /// - returns trigger the failed *RemoveCityProtocol* if the weather failed deleting from coredata
+    func removeCurrentCityWeather(currentCityWeather: CurrentCityWeather) {
+        let coreDataInteractor = CurrentCityWeatherCoreDataInteractor()
+        guard let savedWeathers = coreDataInteractor.getSavedWeathersFromCoreData() else {
+            removeCityProtocol?.removeCityProtocolFailed(with: "Current CityWeather Not found in database")
+            return
+        }
+        
+        if savedWeathers.map({ $0.cityName }).contains(currentCityWeather.cityName){
+            removeCityProtocol?.removeCityProtocolSucceed()
+        }else {
+            removeCityProtocol?.removeCityProtocolFailed(with: "Current CityWeather Not found in database")
         }
     }
     

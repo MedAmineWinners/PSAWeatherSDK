@@ -45,7 +45,7 @@ class WebServiceTest: XCTestCase {
             switch result {
             case .success(let result):
                 mockCurrentCityName = result.name
-            case .failure( _):
+            default:
                 print("")
             }
         }
@@ -65,12 +65,44 @@ class WebServiceTest: XCTestCase {
         let resource = Resource<CurrentCityWeatherModel>(url: URL(string: "https://www.google.com/")!)
         webService.load(resource: resource) { result in
             switch result {
-            case .success(_):
-                print("")
             case .failure(let error):
                 actualError = error
+            default:
+                print("")
             }
         }
         XCTAssertNotNil(actualError)
+    }
+    
+    func test_loadData_fail_with_ApiError() {
+        let expectation = self.expectation(description: "Data loaded")
+        var apiFailureTriggered = false
+        var apiErrorMessage = ""
+        guard let bundle = Bundle(for: type(of: self)).path(forResource: "ApiError", ofType: "json") else {
+            fatalError("wrong bundle")
+        }
+        guard let url = URL(string: "file://"+bundle) else{
+            fatalError("wrong url")
+        }
+        guard let expectedData = try? Data(contentsOf: url) else {
+            fatalError("No data for url \(url)")
+        }
+        
+        session.data = expectedData
+        let resource = Resource<CurrentCityWeatherModel>(url: URL(string: "https://www.google.com/")!)
+        webService?.load(resource: resource, completion: { result in
+            expectation.fulfill()
+            switch result {
+            case .apiFailure(let error):
+                apiFailureTriggered = true
+                apiErrorMessage = error.message
+            default:
+                print("Test Fail")
+            }
+        })
+        
+        waitForExpectations(timeout: 2)
+        XCTAssertTrue(apiFailureTriggered)
+        XCTAssertEqual(apiErrorMessage, "We have not errors! we are just testing")
     }
 }
