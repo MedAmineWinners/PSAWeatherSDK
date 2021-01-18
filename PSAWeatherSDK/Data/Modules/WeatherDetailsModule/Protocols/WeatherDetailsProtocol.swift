@@ -10,7 +10,7 @@ import Foundation
 protocol WeatherDetailsProtocol {
     /// delegate function triggered when CityDetailsInteractor request *Succeed*
     /// - Returns: WeatherDetails in success case
-    func weatherDetailsProtocolSucceed(weatherDetails: WeatherDetails)
+    func weatherDetailsProtocolSucceed(weatherDetails: WeatherDetails?)
     
     /// delegate function triggered when CityDetailsInteractor request *Failed*
     /// - Returns: string error in failure case

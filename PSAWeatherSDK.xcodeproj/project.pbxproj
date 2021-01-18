@@ -19,6 +19,7 @@
 		3355362025B601AB0070DAD6 /* PSAWeatherSDKError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3355361F25B601AB0070DAD6 /* PSAWeatherSDKError.swift */; };
 		3355362A25B60D140070DAD6 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3355362925B60D140070DAD6 /* ApiError.swift */; };
 		3355362F25B614A10070DAD6 /* ApiError.json in Resources */ = {isa = PBXBuildFile; fileRef = 3355362E25B614A10070DAD6 /* ApiError.json */; };
+		3355363D25B61C460070DAD6 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3355363C25B61C460070DAD6 /* Reachability.swift */; };
 		3356ABB425B35B52006F32FF /* PSAWeatherSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3356ABAA25B35B52006F32FF /* PSAWeatherSDK.framework */; };
 		3356ABB925B35B52006F32FF /* PSAWeatherSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3356ABB825B35B52006F32FF /* PSAWeatherSDKTests.swift */; };
 		3356ABBB25B35B52006F32FF /* PSAWeatherSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 3356ABAD25B35B52006F32FF /* PSAWeatherSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -105,6 +106,7 @@
 		3355361F25B601AB0070DAD6 /* PSAWeatherSDKError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSAWeatherSDKError.swift; sourceTree = "<group>"; };
 		3355362925B60D140070DAD6 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		3355362E25B614A10070DAD6 /* ApiError.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ApiError.json; sourceTree = "<group>"; };
+		3355363C25B61C460070DAD6 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		3356ABAA25B35B52006F32FF /* PSAWeatherSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PSAWeatherSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3356ABAD25B35B52006F32FF /* PSAWeatherSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSAWeatherSDK.h; sourceTree = "<group>"; };
 		3356ABAE25B35B52006F32FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -454,6 +456,7 @@
 			isa = PBXGroup;
 			children = (
 				3356AC7325B39305006F32FF /* Extenions.swift */,
+				3355363C25B61C460070DAD6 /* Reachability.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -709,6 +712,7 @@
 				3325DB9225B5991400FDE8ED /* CurrentCitiesWeatherList.swift in Sources */,
 				33B0EC5625B48CEB009F4E51 /* WeatherDetailsCoreDataInteractor.swift in Sources */,
 				3356ACB925B3BBFB006F32FF /* Coord+CoreDataClass.swift in Sources */,
+				3355363D25B61C460070DAD6 /* Reachability.swift in Sources */,
 				3362946E25B4CC8600807589 /* Daily+CoreDataProperties.swift in Sources */,
 				3362947225B4CC8600807589 /* Hourly+CoreDataProperties.swift in Sources */,
 				3362947925B4CCA300807589 /* CurrentCityWeather+CoreDataProperties.swift in Sources */,

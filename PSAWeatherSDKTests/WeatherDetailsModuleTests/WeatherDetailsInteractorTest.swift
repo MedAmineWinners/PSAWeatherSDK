@@ -62,7 +62,7 @@ class PSAWeatherSDKDetailsMock: WeatherDetailsProtocol {
     var weatherDetailsProtocolSucceedCalled = false
     var weatherDetailsProtocolFailedCalled = false
     
-    func weatherDetailsProtocolSucceed(weatherDetails: WeatherDetails) {
+    func weatherDetailsProtocolSucceed(weatherDetails: WeatherDetails?) {
         weatherDetailsProtocolSucceedCalled = true
     }
     

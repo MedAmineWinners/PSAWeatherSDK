@@ -60,7 +60,7 @@ class PSACurrentCitiesWeatherSDKMock: CurrentCitiesWeatherProtocol {
     var currentCitiesWeatherProtocolSucceedCalled = false
     var currentCitiesWeatherProtocolFailedCalled = false
     
-    func CurrentCitiesWeatherProtocolSucceed(currentCitiesWeather: [CurrentCityWeather]) {
+    func CurrentCitiesWeatherProtocolSucceed(currentCitiesWeather: [CurrentCityWeather]?) {
         currentCitiesWeatherProtocolSucceedCalled = true
     }
     

@@ -14,8 +14,18 @@ class WeatherDetailsInteractor {
         self.weatherDetailsProtocol = weatherDetailsProtocol
     }
     
-    /// this method request the weather details of a given *CurrentCityWeather*  and trigger the succeed and failed *WeatherDetailsProtocol* in case of success or fail
+    /// this method check reachability and try to load  *CurrentCitiesWeather* from CoreData if no reachability or from api Call
+    /// - Returns : trigger *WeatherDetailsProtocolSucceed* in success
+    /// - Returns : trigger *WeatherDetailsProtocolFailed* in success
     func getWeatherDetails(of currentCityWeather: CurrentCityWeather, apiKey: String?) {
+        if Reachability.isConnectedToNetwork() {
+            getRemoteWeatherDetails(of: currentCityWeather, apiKey: apiKey)
+        } else {
+            getSavedWeatherDetails(of: currentCityWeather)
+        }
+    }
+    /// this method request the weather details of a given *CurrentCityWeather* and save it to CoreData  and trigger the succeed and failed *WeatherDetailsProtocol* in case of success or fail
+    private func getRemoteWeatherDetails(of currentCityWeather: CurrentCityWeather, apiKey: String?) {
         let latitue = currentCityWeather.coord?.lat ?? 0.0
         let longitude = currentCityWeather.coord?.lon ?? 0.0
         let queryItems = URLGenerator().weatherDetailsQueryItems(with: latitue, lon: longitude, apiKey: apiKey)
@@ -35,6 +45,16 @@ class WeatherDetailsInteractor {
         }
     }
     
+    /// this method request the saved *WeatherDetails* of a *CurrentCitieWeather*
+    /// - Returns  trigger the succeed and failed *CurrentCitiesWeatherProtocol* in case of success or fail
+    private func getSavedWeatherDetails(of currentCityWeather: CurrentCityWeather) {
+        let savedWeatherDetails = currentCityWeather.weatherDetails
+        weatherDetailsProtocol?.weatherDetailsProtocolSucceed(weatherDetails: savedWeatherDetails)
+    }
+}
+
+extension WeatherDetailsInteractor {
+    
     /// this method delete the saved *WeatherDetails* of a given *CurrentCityWeather* from coreData if it already exist
     /// try to save *WeatherDetailsModel*
     /// - returns trigger the success *WeatherDetailsProtocol* if the weather is successfully added to coredata
@@ -50,5 +70,4 @@ class WeatherDetailsInteractor {
             
         }
     }
-    
 }

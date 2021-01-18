@@ -18,8 +18,16 @@ class CurrentCityWeatherInteractor {
         self.removeCityProtocol = removeCityProtocol
     }
     
-    /// this method request the current city weather and trigger the succeed and failed addCityProtocol in case of success or fail
+    /// this method check reachability and try to add a *CurrentCityWeather* to CoreData
     func addCity(with cityName: String, apiKey: String?) {
+        if Reachability.isConnectedToNetwork() {
+            addCurrentCityWeather(with: cityName, apiKey: apiKey)
+        } else {
+            addCityProtocol?.addCityProtocolFailed(with: NetWorkError.reachabilityError.localizedDescription)
+        }
+    }
+    /// this method request the current city weather and trigger the succeed and failed addCityProtocol in case of success or fail
+    private func addCurrentCityWeather(with cityName: String, apiKey: String?) {
         let queryItems = URLGenerator().currentCityWeatherQueryItems(cityName: cityName, apiKey: apiKey)
         guard let url = URLGenerator().getUrl(with: .cityCall, queryItems: queryItems) else { fatalError() }
         let resource = Resource<CurrentCityWeatherModel>(url: url)
