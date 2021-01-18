@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3325DB8725B58EBF00FDE8ED /* WeatherDetailsInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3325DB8625B58EBF00FDE8ED /* WeatherDetailsInteractorTest.swift */; };
 		3356ABB425B35B52006F32FF /* PSAWeatherSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3356ABAA25B35B52006F32FF /* PSAWeatherSDK.framework */; };
 		3356ABB925B35B52006F32FF /* PSAWeatherSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3356ABB825B35B52006F32FF /* PSAWeatherSDKTests.swift */; };
 		3356ABBB25B35B52006F32FF /* PSAWeatherSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 3356ABAD25B35B52006F32FF /* PSAWeatherSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -81,6 +82,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3325DB8625B58EBF00FDE8ED /* WeatherDetailsInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailsInteractorTest.swift; sourceTree = "<group>"; };
 		3356ABAA25B35B52006F32FF /* PSAWeatherSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PSAWeatherSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3356ABAD25B35B52006F32FF /* PSAWeatherSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSAWeatherSDK.h; sourceTree = "<group>"; };
 		3356ABAE25B35B52006F32FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -373,6 +375,7 @@
 		336E2BD425B4EF0900921B95 /* WeatherDetailsModuleTests */ = {
 			isa = PBXGroup;
 			children = (
+				3325DB8625B58EBF00FDE8ED /* WeatherDetailsInteractorTest.swift */,
 			);
 			path = WeatherDetailsModuleTests;
 			sourceTree = "<group>";
@@ -646,6 +649,7 @@
 				33B0EBFD25B468D1009F4E51 /* PSAWeatherSDK.xcdatamodeld in Sources */,
 				336E2BE725B4F26E00921B95 /* WeatherDetailsCoreDataInteractorTest.swift in Sources */,
 				33B0EBE825B45AD9009F4E51 /* WebServiceTest.swift in Sources */,
+				3325DB8725B58EBF00FDE8ED /* WeatherDetailsInteractorTest.swift in Sources */,
 				33B0EC1725B46CAB009F4E51 /* CityInteractorTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

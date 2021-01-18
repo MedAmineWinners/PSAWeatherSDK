@@ -45,7 +45,7 @@ class LocalServiceTest: XCTestCase {
     }
     
     func test_SavedWeather_removed_from_coreData() {
-        coreDataInteractor.saveCurrentCityWeather(currentWeather)
+        let _ = coreDataInteractor.saveCurrentCityWeather(currentWeather)
         coreDataInteractor.removedSavedWeatherFromCoreData(with: "PSAWeatherSDKCity")
         if let testStillSaved = coreDataInteractor.getSavedWeathersFromCoreData() {
             XCTAssertFalse(testStillSaved.contains{
