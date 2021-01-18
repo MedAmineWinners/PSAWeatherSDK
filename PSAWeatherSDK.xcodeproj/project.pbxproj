@@ -17,7 +17,6 @@
 		3325DBB925B5CCA400FDE8ED /* CurrentCitiesWeatherCoreDataTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3325DBB825B5CCA400FDE8ED /* CurrentCitiesWeatherCoreDataTest.swift */; };
 		3325DBC225B5CE3100FDE8ED /* CurrentCitiesWeatherInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3325DBC125B5CE3100FDE8ED /* CurrentCitiesWeatherInteractorTest.swift */; };
 		3355362025B601AB0070DAD6 /* PSAWeatherSDKError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3355361F25B601AB0070DAD6 /* PSAWeatherSDKError.swift */; };
-		3355362525B603FE0070DAD6 /* errors in Resources */ = {isa = PBXBuildFile; fileRef = 3355362425B603FE0070DAD6 /* errors */; };
 		3355362A25B60D140070DAD6 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3355362925B60D140070DAD6 /* ApiError.swift */; };
 		3355362F25B614A10070DAD6 /* ApiError.json in Resources */ = {isa = PBXBuildFile; fileRef = 3355362E25B614A10070DAD6 /* ApiError.json */; };
 		3356ABB425B35B52006F32FF /* PSAWeatherSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3356ABAA25B35B52006F32FF /* PSAWeatherSDK.framework */; };
@@ -104,7 +103,6 @@
 		3325DBB825B5CCA400FDE8ED /* CurrentCitiesWeatherCoreDataTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentCitiesWeatherCoreDataTest.swift; sourceTree = "<group>"; };
 		3325DBC125B5CE3100FDE8ED /* CurrentCitiesWeatherInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentCitiesWeatherInteractorTest.swift; sourceTree = "<group>"; };
 		3355361F25B601AB0070DAD6 /* PSAWeatherSDKError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSAWeatherSDKError.swift; sourceTree = "<group>"; };
-		3355362425B603FE0070DAD6 /* errors */ = {isa = PBXFileReference; lastKnownFileType = text; path = errors; sourceTree = "<group>"; };
 		3355362925B60D140070DAD6 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		3355362E25B614A10070DAD6 /* ApiError.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ApiError.json; sourceTree = "<group>"; };
 		3356ABAA25B35B52006F32FF /* PSAWeatherSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PSAWeatherSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -253,7 +251,6 @@
 		3356ABA025B35B52006F32FF = {
 			isa = PBXGroup;
 			children = (
-				3355362425B603FE0070DAD6 /* errors */,
 				3356ABE125B35C69006F32FF /* PSAWeatherSDK.xcdatamodeld */,
 				3356ABAC25B35B52006F32FF /* PSAWeatherSDK */,
 				3356ABB725B35B52006F32FF /* PSAWeatherSDKTests */,
@@ -663,7 +660,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3355362525B603FE0070DAD6 /* errors in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
