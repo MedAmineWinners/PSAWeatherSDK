@@ -9,16 +9,13 @@ import Foundation
 struct CurrentCityWeatherModel : Codable {
     let coord : CoordModel
     let weather : [WeatherModel]
-    let base : String
     let main : MainModel
     let visibility : Int
     let wind : WindModel
     let clouds : CloudsModel
     let dt : Int
-    let timezone : Int
     let id : Int
     let name : String
-    let cod : Int
 }
 
 struct CoordModel : Codable {

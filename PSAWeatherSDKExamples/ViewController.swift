@@ -16,7 +16,13 @@ class ViewController: UIViewController, PSAWeatherSDKDelegate {
         }
         
         if let weatherDetails = result as? WeatherDetails {
-            print("")
+            if weatherDetails.ofCurrentCity?.cityName == "Arrondissement de Marseille" {
+                PSAWeatherSDK.shared.getSavedCitiesCurrentWeatherList()
+            }
+        }
+        
+        if let cities = result as? [CurrentCityWeather] {
+            
         }
     }
     
@@ -26,13 +32,12 @@ class ViewController: UIViewController, PSAWeatherSDKDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      // PSAWeatherSDK.shared.delegate = self
-    //PSAWeatherSDK.shared.configure(with: "216f0a6fde418838d9d47d4cb09238f5")
-    //PSAWeatherSDK.shared.addCity(with: "Paris")
+   // PSAWeatherSDK.shared.delegate = self
+   // PSAWeatherSDK.shared.configure(with: "216f0a6fde418838d9d47d4cb09238f5")
+   // PSAWeatherSDK.shared.addCity(with: "Paris")
+   // PSAWeatherSDK.shared.addCity(with: "Marseille")
+        
         
         // Do any additional setup after loading the view.
     }
-
-
 }
-

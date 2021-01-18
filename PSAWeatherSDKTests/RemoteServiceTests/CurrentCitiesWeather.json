@@ -1,0 +1,83 @@
+{
+    "cnt": 2,
+    "list": [
+        {
+            "coord": {
+                "lon": 2.3488,
+                "lat": 48.8534
+            },
+            "sys": {
+                "country": "FR",
+                "timezone": 3600,
+                "sunrise": 1610955375,
+                "sunset": 1610987126
+            },
+            "weather": [
+                {
+                    "id": 803,
+                    "main": "Clouds",
+                    "description": "broken clouds",
+                    "icon": "04d"
+                }
+            ],
+            "main": {
+                "temp": 7.09,
+                "feels_like": 3.45,
+                "temp_min": 6.67,
+                "temp_max": 7.22,
+                "pressure": 1026,
+                "humidity": 76
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 3.09,
+                "deg": 240
+            },
+            "clouds": {
+                "all": 75
+            },
+            "dt": 1610975376,
+            "id": 2988507,
+            "name": "Paris"
+        },
+        {
+            "coord": {
+                "lon": 5.5,
+                "lat": 43.3333
+            },
+            "sys": {
+                "country": "FR",
+                "timezone": 3600,
+                "sunrise": 1610953541,
+                "sunset": 1610987448
+            },
+            "weather": [
+                {
+                    "id": 800,
+                    "main": "Clear",
+                    "description": "clear sky",
+                    "icon": "01d"
+                }
+            ],
+            "main": {
+                "temp": 10.3,
+                "feels_like": -0.28,
+                "temp_min": 9.44,
+                "temp_max": 11.11,
+                "pressure": 1023,
+                "humidity": 50
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 12.35,
+                "deg": 340
+            },
+            "clouds": {
+                "all": 0
+            },
+            "dt": 1610975233,
+            "id": 2995468,
+            "name": "Arrondissement de Marseille"
+        }
+    ]
+}
