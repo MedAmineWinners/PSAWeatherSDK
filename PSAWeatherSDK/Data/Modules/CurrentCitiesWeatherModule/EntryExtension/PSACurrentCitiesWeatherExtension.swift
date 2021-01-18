@@ -14,7 +14,7 @@ extension PSAWeatherSDK {
 }
 
 extension PSAWeatherSDK: CurrentCitiesWeatherProtocol {
-    func CurrentCitiesWeatherProtocolSucceed(currentCitiesWeather: [CurrentCityWeather]) {
+    func CurrentCitiesWeatherProtocolSucceed(currentCitiesWeather: [CurrentCityWeather]?) {
         self.delegate?.PSAWeatherSDKDidFinishWithSuccess(result: currentCitiesWeather)
     }
     

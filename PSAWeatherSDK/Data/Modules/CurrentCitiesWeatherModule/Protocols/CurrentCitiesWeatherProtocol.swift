@@ -10,7 +10,7 @@ import Foundation
 protocol CurrentCitiesWeatherProtocol {
     /// delegate function triggered when CurrentCitiesWeatherProtocol request *Succeed*
     /// - Returns: [CurrentCityWeather]
-    func CurrentCitiesWeatherProtocolSucceed(currentCitiesWeather: [CurrentCityWeather])
+    func CurrentCitiesWeatherProtocolSucceed(currentCitiesWeather: [CurrentCityWeather]?)
     
     /// delegate function triggered when CurrentCitiesWeatherProtocol request *failed*
     /// - Returns: error

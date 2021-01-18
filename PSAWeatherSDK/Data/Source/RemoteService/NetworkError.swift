@@ -11,6 +11,7 @@ enum NetWorkError: Error {
     case decodingError
     case domainError
     case networkError
+    case reachabilityError
 }
 
 extension NetWorkError: LocalizedError {
@@ -31,6 +32,11 @@ extension NetWorkError: LocalizedError {
                 "An Error occured please try again",
                 comment: ""
             )
+        case .reachabilityError:
+        return NSLocalizedString(
+            "Please Verify your Internet connection",
+            comment: ""
+        )
         }
     }
 }

@@ -15,8 +15,16 @@ class CurrentCitiesWeatherInteractor {
         self.currentCitiesWeatherProtocol = currentCitiesWeatherProtocol
     }
     
-    /// this method request the current cities weather list and trigger the succeed and failed currentCitiesWeatherProtocol in case of success or fail
+    /// this method check reachability and try to load  *CurrentCitiesWeather* from CoreData if no reachability or from api Call
     func getCurrentCitiesWeather(with apiKey: String?) {
+        if Reachability.isConnectedToNetwork() {
+            getRemoteCurrentCitiesWeather(with: apiKey)
+        } else {
+            getSavedCitiesWeather()
+        }
+    }
+    /// this method request the current cities weather list and save it and trigger the succeed and failed *CurrentCitiesWeatherProtocol* in case of success or fail
+    private func getRemoteCurrentCitiesWeather(with apiKey: String?) {
         let queryItems = URLGenerator().currentCitiesWeatherQueryItems(cityIds: savedCitiesIds(), apiKey: apiKey)
         guard let url = URLGenerator().getUrl(with: .cityList, queryItems: queryItems) else { fatalError() }
         let resource = Resource<CurrentCitiesWeatherListModel>(url: url)
@@ -33,6 +41,15 @@ class CurrentCitiesWeatherInteractor {
         }
     }
     
+    /// this method fetch saved *[CurrentCityWeather]* and trigger a success with the saved value
+    /// - Remark the saved value can be an empty array, means no data is saved on CoreData
+    private func getSavedCitiesWeather() {
+        let savedCitiesWeather = CurrentCityWeatherCoreDataInteractor().getSavedWeathersFromCoreData()
+        currentCitiesWeatherProtocol?.CurrentCitiesWeatherProtocolSucceed(currentCitiesWeather: savedCitiesWeather)
+    }
+}
+
+extension CurrentCitiesWeatherInteractor {
     /// savedCitiesIds method return the ids of the saved cities in core data
     private func savedCitiesIds() -> [String] {
         if let savedCurrentCities = CurrentCityWeatherCoreDataInteractor().getSavedWeathersFromCoreData() {

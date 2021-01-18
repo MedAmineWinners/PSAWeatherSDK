@@ -15,7 +15,7 @@ extension PSAWeatherSDK {
 }
 
 extension PSAWeatherSDK: WeatherDetailsProtocol {
-    func weatherDetailsProtocolSucceed(weatherDetails: WeatherDetails) {
+    func weatherDetailsProtocolSucceed(weatherDetails: WeatherDetails?) {
         self.delegate?.PSAWeatherSDKDidFinishWithSuccess(result: weatherDetails)
     }
     
