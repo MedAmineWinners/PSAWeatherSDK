@@ -51,10 +51,14 @@ class WebService {
                     completion(.success(result))
                 }
             } else if let apiError = try? JSONDecoder().decode(ApiError.self, from: data) {
-                completion(.apiFailure(apiError))
+                DispatchQueue.main.async {
+                    completion(.apiFailure(apiError))
+                }
             }
             else {
-                completion(.failure(.decodingError))
+                DispatchQueue.main.async {
+                    completion(.failure(.decodingError))
+                }
             }
         }
     }
