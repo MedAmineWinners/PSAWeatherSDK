@@ -23,7 +23,7 @@ extension CurrentCityWeather {
     @NSManaged public var visibility: Int16
     @NSManaged public var clouds: Clouds?
     @NSManaged public var coord: Coord?
-    @NSManaged public var main: Main?
+    @NSManaged public var main: Main
     @NSManaged public var weatherDetails: WeatherDetails?
     @NSManaged public var weathers: NSSet?
     @NSManaged public var wind: Wind?

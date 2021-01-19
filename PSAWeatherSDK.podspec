@@ -10,11 +10,12 @@ Pod::Spec.new do |spec|
   spec.license      = { :type => "MIT", :file => "LICENSE" }
   spec.author       = { "Amine Belfekih" => "mohamedamine.belfkih@esprit.tn" }
   spec.swift_version = "5.0"
-  spec.ios.deployment_target = "13"
-  spec.source        = { :git => "https://github.com/jeantimex/SwiftyLib.git", :tag => "#{spec.version}" }
+  spec.ios.deployment_target = "11"
   spec.source       = { :git => "https://github.com/MedAmineWinners/PSAWeatherSDK.git", :tag => "#{spec.version}" }
 
-  spec.source_files  = "PSAWeatherSDK/**/*.{h,m,swift}"
-
-
+  spec.source_files  = "PSAWeatherSDK/**/*.{h,m,swift,xcdatamodeld}"
+  spec.resources = "PSAWeatherSDK/**/*.{xcdatamodeld}"
+  spec.framework = "CoreData"
+  
 end
+    
