@@ -16,7 +16,7 @@ extension Daily {
         return NSFetchRequest<Daily>(entityName: "Daily")
     }
 
-    @NSManaged public var date: Date?
+    @NSManaged public var date: Date
     @NSManaged public var humidity: Int16
     @NSManaged public var maxTemperature: Int16
     @NSManaged public var minTemperature: Int16
