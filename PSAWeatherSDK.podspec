@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "PSAWeatherSDK"
-  spec.version      = "0.0.2"
+  spec.version      = "0.0.3"
   spec.summary      = "PSAWeatherSDK is a weather library implemented on swift"
   spec.description  = <<-DESC
 			PSAWeatherSDK allows you to add Cities weather and to check weather details
@@ -13,6 +13,7 @@ Pod::Spec.new do |spec|
   spec.ios.deployment_target = "11"
   spec.source       = { :git => "https://github.com/MedAmineWinners/PSAWeatherSDK.git", :tag => "#{spec.version}" }
 
+  spec.requires_arc = true
   spec.source_files  = "PSAWeatherSDK/**/*.{h,m,swift,xcdatamodeld}"
   spec.resources = "PSAWeatherSDK/**/*.{xcdatamodeld}"
   spec.framework = "CoreData"
