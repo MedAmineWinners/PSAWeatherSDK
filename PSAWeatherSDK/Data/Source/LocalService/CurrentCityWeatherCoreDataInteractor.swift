@@ -90,6 +90,7 @@ class CurrentCityWeatherCoreDataInteractor {
                 PersistenceService.context.delete(currentWeather)
             }
         }
+        try? PersistenceService.context.save()
     }
     
     /// - Returns a list of the saved CurrentCityWeather 
@@ -98,9 +99,16 @@ class CurrentCityWeatherCoreDataInteractor {
         let fetchResult = try? PersistenceService.context.fetch(request)
         return fetchResult
     }
-}
-
-enum CoreDataError: Error {
-    case savingError
-    case imputError
+    
+    /// - Returns bool checking if a given city name exist in database
+    func cityExistsInDatabase(cityName: String) -> Bool {
+        if let cities = getSavedWeathersFromCoreData() {
+            return cities.map{ $0.cityName.lowercased() }.contains(cityName)
+        }
+        return false
+    }
+    
+    func haveMaximumSavedCities() -> Bool{
+        return getSavedWeathersFromCoreData()?.count == 20
+    }
 }

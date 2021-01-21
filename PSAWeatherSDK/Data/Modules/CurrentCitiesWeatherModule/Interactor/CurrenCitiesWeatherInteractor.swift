@@ -15,14 +15,21 @@ class CurrentCitiesWeatherInteractor {
         self.currentCitiesWeatherProtocol = currentCitiesWeatherProtocol
     }
     
-    /// this method check reachability and try to load  *CurrentCitiesWeather* from CoreData if no reachability or from api Call
+    /// this method check if we already have saved cities
+    /// check reachability
+    /// try to load  *CurrentCitiesWeather* from CoreData if no reachability or from api Call
     func getCurrentCitiesWeather(with apiKey: String?) {
-        if Reachability.isConnectedToNetwork() {
-            getRemoteCurrentCitiesWeather(with: apiKey)
+        if savedCitiesIds().count > 0 {
+            if Reachability.isConnectedToNetwork() {
+                getRemoteCurrentCitiesWeather(with: apiKey)
+            } else {
+                getSavedCitiesWeather()
+            }
         } else {
-            getSavedCitiesWeather()
+            currentCitiesWeatherProtocol?.CurrentCitiesWeatherProtocolSucceed(currentCitiesWeather: [CurrentCityWeather]())
         }
     }
+    
     /// this method request the current cities weather list and save it and trigger the succeed and failed *CurrentCitiesWeatherProtocol* in case of success or fail
     private func getRemoteCurrentCitiesWeather(with apiKey: String?) {
         let queryItems = URLGenerator().currentCitiesWeatherQueryItems(cityIds: savedCitiesIds(), apiKey: apiKey)

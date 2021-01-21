@@ -33,8 +33,8 @@
         <attribute name="maxTemperature" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="minTemperature" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="pressure" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="sunrise" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="sunset" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="sunrise" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="sunset" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <relationship name="ofWeatherDetails" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WeatherDetails" inverseName="dailyForcast" inverseEntity="WeatherDetails"/>
         <relationship name="weathers" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Weather" inverseName="ofDailyForcast" inverseEntity="Weather"/>
     </entity>
