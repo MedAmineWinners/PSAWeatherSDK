@@ -33,10 +33,10 @@ extension NetWorkError: LocalizedError {
                 comment: ""
             )
         case .reachabilityError:
-        return NSLocalizedString(
-            "Please Verify your Internet connection",
-            comment: ""
-        )
+            return NSLocalizedString(
+                "Please Verify your Internet connection",
+                comment: ""
+            )
         }
     }
 }

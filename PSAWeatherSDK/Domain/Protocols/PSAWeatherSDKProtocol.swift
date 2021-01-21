@@ -19,6 +19,7 @@ public protocol PSAWeatherSDKProtocol {
     /// the method verify if the city exist, add it to database and return the city entity to the user
     /// - Parameter cityName: the name of the city
     /// - Remark: addCity method result will be tracked by **PSAWeatherSDKDelegate**
+    /// - Remark: **You cannot add more than 20 cities**
     func addCity(with cityName: String)
     
     

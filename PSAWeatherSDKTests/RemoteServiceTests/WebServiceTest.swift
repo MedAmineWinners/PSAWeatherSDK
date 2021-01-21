@@ -31,7 +31,7 @@ class WebServiceTest: XCTestCase {
             fatalError("wrong url")
         }
         guard let expectedData = try? Data(contentsOf: url) else {
-            fatalError("No data for url \(url)")
+            fatalError("No data")
         }
         
         session.data = expectedData

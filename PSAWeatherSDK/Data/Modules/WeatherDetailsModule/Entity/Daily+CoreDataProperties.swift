@@ -21,8 +21,8 @@ extension Daily {
     @NSManaged public var maxTemperature: Int16
     @NSManaged public var minTemperature: Int16
     @NSManaged public var pressure: Int16
-    @NSManaged public var sunrise: Int16
-    @NSManaged public var sunset: Int16
+    @NSManaged public var sunrise: Date
+    @NSManaged public var sunset: Date
     @NSManaged public var ofWeatherDetails: WeatherDetails?
     @NSManaged public var weathers: NSSet?
 

@@ -12,20 +12,32 @@ class CurrentCityWeatherInteractor {
     var addCityProtocol: AddCityProtocol?
     var removeCityProtocol: RemoveCityProtocol?
     var webService = WebService()
-    
+    private let coreDataInteractor = CurrentCityWeatherCoreDataInteractor()
     init(addCityProtocol: AddCityProtocol, removeCityProtocol: RemoveCityProtocol) {
         self.addCityProtocol = addCityProtocol
         self.removeCityProtocol = removeCityProtocol
     }
     
-    /// this method check reachability and try to add a *CurrentCityWeather* to CoreData
+    /// this method check if coredata have Maximum Saved Cities
+    /// check if city Exists In Database
+    /// check reachability
+    /// try to add a *CurrentCityWeather* to CoreData
     func addCity(with cityName: String, apiKey: String?) {
-        if Reachability.isConnectedToNetwork() {
-            addCurrentCityWeather(with: cityName, apiKey: apiKey)
+        if coreDataInteractor.haveMaximumSavedCities() {
+            addCityProtocol?.addCityProtocolFailed(with: CoreDataError.maximumCityNumber.localizedDescription)
         } else {
-            addCityProtocol?.addCityProtocolFailed(with: NetWorkError.reachabilityError.localizedDescription)
+            if coreDataInteractor.cityExistsInDatabase(cityName: cityName) {
+                addCityProtocol?.addCityProtocolFailed(with: CoreDataError.cityExist.localizedDescription)
+            } else {
+                if Reachability.isConnectedToNetwork() {
+                    addCurrentCityWeather(with: cityName, apiKey: apiKey)
+                } else {
+                    addCityProtocol?.addCityProtocolFailed(with: NetWorkError.reachabilityError.localizedDescription)
+                }
+            }
         }
     }
+    
     /// this method request the current city weather and trigger the succeed and failed addCityProtocol in case of success or fail
     private func addCurrentCityWeather(with cityName: String, apiKey: String?) {
         let queryItems = URLGenerator().currentCityWeatherQueryItems(cityName: cityName, apiKey: apiKey)
@@ -48,13 +60,13 @@ class CurrentCityWeatherInteractor {
     /// - returns trigger the success *RemoveCityProtocol* if the weather is successfully deleted to coredata
     /// - returns trigger the failed *RemoveCityProtocol* if the weather failed deleting from coredata
     func removeCurrentCityWeather(currentCityWeather: CurrentCityWeather) {
-        let coreDataInteractor = CurrentCityWeatherCoreDataInteractor()
         guard let savedWeathers = coreDataInteractor.getSavedWeathersFromCoreData() else {
             removeCityProtocol?.removeCityProtocolFailed(with: "Current CityWeather Not found in database")
             return
         }
         
         if savedWeathers.map({ $0.cityName }).contains(currentCityWeather.cityName){
+            coreDataInteractor.removedSavedWeatherFromCoreData(with: currentCityWeather.cityName)
             removeCityProtocol?.removeCityProtocolSucceed()
         }else {
             removeCityProtocol?.removeCityProtocolFailed(with: "Current CityWeather Not found in database")

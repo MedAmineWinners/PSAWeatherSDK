@@ -25,6 +25,8 @@ class WeatherDetailsCoreDataInteractor {
             dailyForcast.maxTemperature = Int16(round(daily.temp.max))
             dailyForcast.minTemperature = Int16(round(daily.temp.min))
             dailyForcast.pressure = Int16(daily.pressure)
+            dailyForcast.sunrise = Date(timeIntervalSince1970: TimeInterval(daily.sunrise))
+            dailyForcast.sunset = Date(timeIntervalSince1970: TimeInterval(daily.sunset))
             
             var weatherArray = [Weather]()
             for weatherModel in daily.weather {
@@ -80,6 +82,7 @@ class WeatherDetailsCoreDataInteractor {
                 PersistenceService.context.delete(object)
             }
         }
+        try? PersistenceService.context.save()
     }
     
     /// remove a specific weather details with CityName
@@ -95,5 +98,4 @@ class WeatherDetailsCoreDataInteractor {
             }
         }
     }
-   
 }

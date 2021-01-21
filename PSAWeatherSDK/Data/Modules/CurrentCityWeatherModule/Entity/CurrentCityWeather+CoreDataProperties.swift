@@ -18,7 +18,7 @@ extension CurrentCityWeather {
 
     @NSManaged public var base: String?
     @NSManaged public var cityId: Int64
-    @NSManaged public var cityName: String?
+    @NSManaged public var cityName: String
     @NSManaged public var date: Date?
     @NSManaged public var visibility: Int16
     @NSManaged public var clouds: Clouds?
