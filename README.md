@@ -10,7 +10,7 @@ PSAWeatherSDK is a library implented in Swift using a clean architecture and all
 CocoaPods is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate PSAWeatherSDK into your Xcode project using CocoaPods, specify it in your Podfile:
 
 ```ruby
-pod 'PSAWeatherSDK', '~> 0.0'
+pod 'PSAWeatherSDK', '~> 0.1'
 ```
 
 ## How to use 
